@@ -76,20 +76,11 @@
   <section class="scene scene--music" id="music" aria-label="Музыка">
     <div class="stage"><i class="px px--vinyl" aria-hidden="true"></i></div>
     <div class="slot slot--music">
-      <ul class="tracks">
-        <li class="track">
-          <div class="track__info"><h3>Название трека</h3><p>Сингл · 2026</p></div>
-          <div class="links"><a class="btn" href="#">Яндекс</a><a class="btn" href="#">VK</a><a class="btn" href="#">Spotify</a></div>
-        </li>
-        <li class="track">
-          <div class="track__info"><h3>Название трека</h3><p>Сингл · 2026</p></div>
-          <div class="links"><a class="btn" href="#">Яндекс</a><a class="btn" href="#">VK</a><a class="btn" href="#">Spotify</a></div>
-        </li>
-        <li class="track">
-          <div class="track__info"><h3>Название трека</h3><p>Сингл · 2025</p></div>
-          <div class="links"><a class="btn" href="#">Яндекс</a><a class="btn" href="#">VK</a><a class="btn" href="#">Spotify</a></div>
-        </li>
-      </ul>
+      <div class="player" id="player">
+        <iframe id="ymusic" frameborder="0" allow="clipboard-write" width="614" height="556"
+                title="Яндекс Музыка: плейлист «Все в одном»" loading="lazy"
+                src="https://music.yandex.ru/iframe/playlist/alex-danry/1011">Слушайте <a href="https://music.yandex.ru/playlists/88b9a947-63b0-c316-9d3f-92d493211bbf">Все в одном</a> — <a href="https://music.yandex.ru/users/alex-danry">Александр Мезенцев</a> на Яндекс Музыке</iframe>
+      </div>
     </div>
   </section>
 
@@ -135,6 +126,21 @@
     var bar = document.querySelector('.mnav'), hero = document.querySelector('.hero-clip');
     function upd() { bar.classList.toggle('on', hero.getBoundingClientRect().bottom < 60); }
     addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+  })();
+</script>
+<script>
+  /* desktop: the Yandex widget keeps its designed 614px width and is scaled to the panel in the art; phones: natural width */
+  (function () {
+    var box = document.getElementById('player'), f = document.getElementById('ymusic');
+    var mq = matchMedia('(max-width: 899px)');
+    function fit() {
+      if (mq.matches) { f.style.width = f.style.height = f.style.transform = ''; return; }
+      var s = box.clientWidth / 614;
+      f.style.width = '614px';
+      f.style.height = (box.clientHeight / s) + 'px';
+      f.style.transform = 'scale(' + s + ')';
+    }
+    new ResizeObserver(fit).observe(box); fit();
   })();
 </script>
 </body>
