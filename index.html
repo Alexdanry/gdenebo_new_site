@@ -58,7 +58,7 @@
     <div class="slot slot--video">
       <div class="screen">
         <!-- VK video player (vkvideo.ru domain: the vk.com embed rendered a black screen) -->
-        <iframe src="https://vkvideo.ru/video_ext.php?oid=-128118068&id=456239232&hd=2"
+        <iframe id="clip" data-src="https://vkvideo.ru/video_ext.php?oid=-128118068&id=456239232&hd=2&js_api=1&loop=1"
                 title="Клип гденебо" loading="lazy" allowfullscreen
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
@@ -109,5 +109,19 @@
   <a href="#top">наверх ▲</a>
 </footer>
 
+<!-- loop the clip: VK player API restarts it on "ended" (listener must exist before the player loads, so src is set here;
+     if the API script is blocked the player still loads, just without the loop) -->
+<script src="https://vk.com/js/api/videoplayer.js"></script>
+<script>
+  (function () {
+    var f = document.getElementById('clip');
+    if (!f) return;
+    f.src = f.getAttribute('data-src');          /* the API validates src, and listens before the frame finishes loading */
+    try {
+      var player = VK.VideoPlayer(f);
+      player.on('ended', function () { player.seek(0); player.play(); });
+    } catch (e) { /* API script blocked: player still works, just no loop */ }
+  })();
+</script>
 </body>
 </html>
