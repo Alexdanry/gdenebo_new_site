@@ -181,7 +181,6 @@ p { margin: 0; }
 /* billboard words: palette-cycling shimmer, colour bands run diagonally, one step per 0.2s */
 .px--text { --n: 5; animation: text-shimmer 1s step-end infinite; }
 .px--text-d { left: 6.771%; top: 26.430%; width: 14.583%; aspect-ratio: 280 / 355; background-image: url(img/text-d.png); image-rendering: auto; }
-.px--text-m { display: none; background-image: url(img/text-m.png); image-rendering: auto; aspect-ratio: 196 / 302; }
 @keyframes text-shimmer {
   0%   { background-position-x: 0%; }
   20%  { background-position-x: 25%; }
@@ -307,17 +306,11 @@ p { margin: 0; }
   .mnav a:first-child { border-left: 0; }
   .mnav a:active { background: var(--yellow); color: var(--line); }
 
-  .hero { height: 100svh; min-height: 480px; overflow: hidden; }
-  .hero__img { height: 100%; object-fit: cover; object-position: 38% 14%; }
-  .hot { display: none; }
-  .hero .px { display: none; } /* hero sprites are registered to the landscape art only ... */
-  /* ... except the billboard text, which follows the cover-cropped portrait art (941x1507, object-position 38% 14%) */
-  .hero {
-    --s: max(calc(100vw / 941), calc(100svh / 1507));
-    --ox: calc((100vw - 941 * var(--s)) * .38);
-    --oy: calc((100svh - 1507 * var(--s)) * .14);
-  }
-  .hero .px--text-m { display: block; left: calc(var(--ox) + var(--s) * 62); top: calc(var(--oy) + var(--s) * 338); width: calc(var(--s) * 196); }
+  /* hero: the same registered wide art (nav, lamps, stars, cat, shimmer all included), scaled up and cropped to the middle */
+  .hero-clip { overflow: hidden; }
+  .hero { width: 151.5vw; margin-left: -27.3vw; }
+  .mnav { transform: translateY(-120%); transition: transform .2s; }
+  .mnav.on { transform: none; }
 
   /* video + music: the same registered stage as on desktop, scaled up and cropped to the interesting part */
   .scene--video .stage { width: 165vw; margin-left: -39.4vw; }   /* TV fills the width */

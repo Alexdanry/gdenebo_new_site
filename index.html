@@ -27,16 +27,15 @@
 
 <main>
   <!-- 1. HERO -->
+  <div class="hero-clip">
   <section class="hero" id="top">
     <h1 class="sr-only">гденебо — искренний братский поп-панк</h1>
     <picture>
-      <source media="(max-width: 899px)" srcset="img/hero.webp">
       <img class="hero__img" src="img/hero-wide.webp?v=3" width="1920" height="1154"
            alt="Двое участников группы гденебо в красном и синем спортивных костюмах сидят на кирпичной стене на фоне закатного города. Вывеска: гденебо — искренний братский поп-панк.">
     </picture>
     <!-- pixel-art animation layers: frame sprites, 10 fps, whole logical pixels only -->
     <i class="px px--text px--text-d" aria-hidden="true"></i>
-    <i class="px px--text px--text-m" aria-hidden="true"></i>
     <i class="px px--stars-a" aria-hidden="true"></i>
     <i class="px px--stars-b" aria-hidden="true"></i>
     <i class="px px--stars-c" aria-hidden="true"></i>
@@ -52,6 +51,7 @@
       <a style="left:59%;width:18.1%" href="#contacts" aria-label="Контакты"></a>
     </nav>
   </section>
+  </div>
 
   <!-- 2. VIDEO -->
   <section class="scene scene--video" id="video" aria-label="Видео">
@@ -125,6 +125,14 @@
       var player = VK.VideoPlayer(f);
       player.on('ended', function () { player.seek(0); player.play(); });
     } catch (e) { /* API script blocked: player still works, just no loop */ }
+  })();
+</script>
+<script>
+  /* phones: the nav is drawn in the hero art; show the real fixed bar only after the hero scrolls away */
+  (function () {
+    var bar = document.querySelector('.mnav'), hero = document.querySelector('.hero-clip');
+    function upd() { bar.classList.toggle('on', hero.getBoundingClientRect().bottom < 60); }
+    addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
   })();
 </script>
 </body>
