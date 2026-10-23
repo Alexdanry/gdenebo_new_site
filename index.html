@@ -77,9 +77,10 @@
     <div class="stage"><i class="px px--vinyl" aria-hidden="true"></i></div>
     <div class="slot slot--music">
       <div class="player" id="player">
-        <iframe id="ymusic" frameborder="0" allow="clipboard-write" width="614" height="556"
-                title="Яндекс Музыка: плейлист «Все в одном»" loading="lazy"
-                src="https://music.yandex.ru/iframe/playlist/alex-danry/1011">Слушайте <a href="https://music.yandex.ru/playlists/88b9a947-63b0-c316-9d3f-92d493211bbf">Все в одном</a> — <a href="https://music.yandex.ru/users/alex-danry">Александр Мезенцев</a> на Яндекс Музыке</iframe>
+        <iframe id="ymusic" style="border-radius:12px" frameborder="0" width="100%" height="352"
+                title="Spotify: гденебо" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+                src="https://open.spotify.com/embed/artist/1uYlEnMz2OyrIvt9TrfFQ6?utm_source=generator&theme=0&si=71c9513e6f7749d8"></iframe>
       </div>
     </div>
   </section>
@@ -129,15 +130,15 @@
   })();
 </script>
 <script>
-  /* desktop: the Yandex widget keeps its designed 614px width and is scaled to the panel in the art; phones: natural width */
+  /* desktop: the player keeps its designed height (352px) and is scaled to the panel in the art; phones: natural size */
   (function () {
     var box = document.getElementById('player'), f = document.getElementById('ymusic');
     var mq = matchMedia('(max-width: 899px)');
     function fit() {
       if (mq.matches) { f.style.width = f.style.height = f.style.transform = ''; return; }
-      var s = box.clientWidth / 614;
-      f.style.width = '614px';
-      f.style.height = (box.clientHeight / s) + 'px';
+      var s = box.clientHeight / 352;
+      f.style.height = '352px';
+      f.style.width = (box.clientWidth / s) + 'px';
       f.style.transform = 'scale(' + s + ')';
     }
     new ResizeObserver(fit).observe(box); fit();
