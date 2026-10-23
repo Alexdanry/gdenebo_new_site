@@ -207,6 +207,29 @@ p { margin: 0; }
   77.500% { background-position-x: 0.0000%; }
 }
 
+/* vinyl: label really rotates, dithered sheen sectors sweep the grooves; 18 frames x 0.1s = 33 rpm; tonearm untouched */
+.px--vinyl { --n: 18; left: 19.6875%; top: 32.615%; width: 22.344%; aspect-ratio: 429 / 159; background-image: url(img/vinyl.png); animation: vinyl 1.8s step-end infinite; }
+@keyframes vinyl {
+  0.000% { background-position-x: 0.0000%; }
+  5.556% { background-position-x: 5.8824%; }
+  11.111% { background-position-x: 11.7647%; }
+  16.667% { background-position-x: 17.6471%; }
+  22.222% { background-position-x: 23.5294%; }
+  27.778% { background-position-x: 29.4118%; }
+  33.333% { background-position-x: 35.2941%; }
+  38.889% { background-position-x: 41.1765%; }
+  44.444% { background-position-x: 47.0588%; }
+  50.000% { background-position-x: 52.9412%; }
+  55.556% { background-position-x: 58.8235%; }
+  61.111% { background-position-x: 64.7059%; }
+  66.667% { background-position-x: 70.5882%; }
+  72.222% { background-position-x: 76.4706%; }
+  77.778% { background-position-x: 82.3529%; }
+  83.333% { background-position-x: 88.2353%; }
+  88.889% { background-position-x: 94.1176%; }
+  94.444% { background-position-x: 100.0000%; }
+}
+
 /* ---------- scenes (stacked, seamless) ---------- */
 .scene {
   position: relative;
