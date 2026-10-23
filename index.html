@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>гденебо — искренний братский поп-панк</title>
+  <meta name="description" content="гденебо — дуэт, искренний братский поп-панк. Музыка, видео, контакты.">
+  <meta name="theme-color" content="#1a1030">
+  <meta property="og:title" content="гденебо">
+  <meta property="og:description" content="искренний братский поп-панк">
+  <meta property="og:image" content="img/hero-wide.webp?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- real nav: phones only (on wide screens the nav is part of the hero art) -->
+<header class="mnav">
+  <nav aria-label="Основная навигация">
+    <a href="#video">Видео</a>
+    <a href="#music">Музыка</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+</header>
+
+<main>
+  <!-- 1. HERO -->
+  <section class="hero" id="top">
+    <h1 class="sr-only">гденебо — искренний братский поп-панк</h1>
+    <picture>
+      <source media="(max-width: 899px)" srcset="img/hero.webp">
+      <img class="hero__img" src="img/hero-wide.webp?v=3" width="1920" height="1154"
+           alt="Двое участников группы гденебо в красном и синем спортивных костюмах сидят на кирпичной стене на фоне закатного города. Вывеска: гденебо — искренний братский поп-панк.">
+    </picture>
+    <!-- pixel-art animation layers: frame sprites, 10 fps, whole logical pixels only -->
+    <i class="px px--text px--text-d" aria-hidden="true"></i>
+    <i class="px px--text px--text-m" aria-hidden="true"></i>
+    <i class="px px--stars-a" aria-hidden="true"></i>
+    <i class="px px--stars-b" aria-hidden="true"></i>
+    <i class="px px--stars-c" aria-hidden="true"></i>
+    <i class="px px--fx-l" aria-hidden="true"></i>
+    <i class="px px--fx-r" aria-hidden="true"></i>
+    <i class="px px--lamp-l" aria-hidden="true"></i>
+    <i class="px px--lamp-r" aria-hidden="true"></i>
+    <i class="px px--cat" aria-hidden="true"></i>
+    <!-- clickable areas over the nav drawn in the art -->
+    <nav class="hot" aria-label="Основная навигация">
+      <a style="left:22.9%;width:18.1%" href="#video" aria-label="Видео"></a>
+      <a style="left:41%;width:18%" href="#music" aria-label="Музыка"></a>
+      <a style="left:59%;width:18.1%" href="#contacts" aria-label="Контакты"></a>
+    </nav>
+  </section>
+
+  <!-- 2. VIDEO -->
+  <section class="scene scene--video" id="video" aria-label="Видео">
+    <div class="slot slot--video">
+      <div class="screen">
+        <!-- Замени на iframe клипа: <iframe src="https://www.youtube.com/embed/ID" allowfullscreen></iframe> -->
+        <a class="play" href="#" aria-label="Смотреть клип">
+          <span class="play__tri"></span>
+          <span class="play__wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. MUSIC -->
+  <section class="scene scene--music" id="music" aria-label="Музыка">
+    <div class="slot slot--music">
+      <ul class="tracks">
+        <li class="track">
+          <div class="track__info"><h3>Название трека</h3><p>Сингл · 2026</p></div>
+          <div class="links"><a class="btn" href="#">Яндекс</a><a class="btn" href="#">VK</a><a class="btn" href="#">Spotify</a></div>
+        </li>
+        <li class="track">
+          <div class="track__info"><h3>Название трека</h3><p>Сингл · 2026</p></div>
+          <div class="links"><a class="btn" href="#">Яндекс</a><a class="btn" href="#">VK</a><a class="btn" href="#">Spotify</a></div>
+        </li>
+        <li class="track">
+          <div class="track__info"><h3>Название трека</h3><p>Сингл · 2025</p></div>
+          <div class="links"><a class="btn" href="#">Яндекс</a><a class="btn" href="#">VK</a><a class="btn" href="#">Spotify</a></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. ABOUT + CONTACTS -->
+  <section class="scene scene--contacts" id="contacts" aria-label="О группе и контакты">
+    <div class="slot slot--contacts">
+      <div class="about" id="about">
+        <p class="lead">гденебо — искренний братский поп-панк.</p>
+        <p>Двое друзей, гитары и песни про то, что болит и что греет. Здесь будет история группы.</p>
+      </div>
+      <div class="links links--contacts">
+        <a class="btn" href="mailto:hello@gdenebo.ru">hello@gdenebo.ru</a>
+        <a class="btn" href="#">Telegram</a>
+        <a class="btn" href="#">VK</a>
+        <a class="btn" href="#">YouTube</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© 2026 гденебо</span>
+  <a href="#top">наверх ▲</a>
+</footer>
+
+</body>
+</html>

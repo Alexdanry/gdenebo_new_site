@@ -1,0 +1,13 @@
+services:
+  - type: web
+    runtime: static
+    name: gdenebo
+    staticPublishPath: .
+    buildCommand: echo "static site, nothing to build"
+    headers:
+      - path: /img/*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
