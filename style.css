@@ -201,7 +201,8 @@ p { margin: 0; }
 .scene--contacts { aspect-ratio: 1920 / 540;  background-image: url(img/contacts.webp); }
 
 .slot { position: absolute; }
-.slot--video    { left: 29.4%; top: 33.2%; width: 42.7%; height: 43.1%; }
+.slot--video    { left: 29.167%; top: 32.675%; width: 42.708%; height: 44.165%; }  /* a little larger than the screen: the bezel covers the edges */
+.tvframe { position: absolute; left: 25%; top: 26.929%; width: 58.333%; height: auto; pointer-events: none; z-index: 2; }
 .slot--music    { left: 51.8%; top: 25.1%; width: 36.8%; height: 36.9%; }
 .slot--contacts { left: 8%; top: 45%; width: 84%; height: 48%; display: grid; grid-template-columns: 1fr 1fr; gap: 3cqw; align-items: center; }
 
@@ -271,6 +272,7 @@ p { margin: 0; }
   .hero { height: 100svh; min-height: 480px; overflow: hidden; }
   .hero__img { height: 100%; object-fit: cover; object-position: 38% 14%; }
   .hot { display: none; }
+  .tvframe { display: none; }
   .px { display: none; } /* sprites are registered to the landscape art only ... */
   /* ... except the billboard text, which follows the cover-cropped portrait art (941x1507, object-position 38% 14%) */
   .hero {
