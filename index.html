@@ -57,12 +57,10 @@
   <section class="scene scene--video" id="video" aria-label="Видео">
     <div class="slot slot--video">
       <div class="screen">
-        <!-- VK video: click loads the player (autoplay); without JS the link opens the video on VK -->
-        <a class="play" id="play" href="https://vkvideo.ru/video-128118068_456239232" target="_blank" rel="noopener"
-           data-embed="https://vk.com/video_ext.php?oid=-128118068&id=456239232&hd=2&autoplay=1" aria-label="Смотреть клип">
-          <span class="play__tri"></span>
-          <span class="play__wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-        </a>
+        <!-- VK video player (vkvideo.ru domain: the vk.com embed rendered a black screen) -->
+        <iframe src="https://vkvideo.ru/video_ext.php?oid=-128118068&id=456239232&hd=2"
+                title="Клип гденебо" loading="lazy" allowfullscreen
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
     </div>
     <!-- TV bezel with a transparent screen, drawn above the video -->
@@ -111,16 +109,5 @@
   <a href="#top">наверх ▲</a>
 </footer>
 
-<script>
-  document.getElementById('play').addEventListener('click', function (e) {
-    e.preventDefault();
-    var f = document.createElement('iframe');
-    f.src = this.dataset.embed;
-    f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
-    f.allowFullscreen = true;
-    f.title = 'Клип гденебо';
-    this.replaceWith(f);
-  });
-</script>
 </body>
 </html>
