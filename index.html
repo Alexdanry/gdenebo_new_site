@@ -55,22 +55,24 @@
 
   <!-- 2. VIDEO -->
   <section class="scene scene--video" id="video" aria-label="Видео">
-    <div class="slot slot--video">
-      <div class="screen">
-        <!-- VK video player (vkvideo.ru domain: the vk.com embed rendered a black screen) -->
-        <iframe id="clip" data-src="https://vkvideo.ru/video_ext.php?oid=-128118068&id=456239232&hd=2&js_api=1&loop=1"
-                title="Клип гденебо" loading="lazy" allowfullscreen
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <div class="stage">
+      <div class="slot slot--video">
+        <div class="screen">
+          <!-- VK video player (vkvideo.ru domain: the vk.com embed rendered a black screen) -->
+          <iframe id="clip" data-src="https://vkvideo.ru/video_ext.php?oid=-128118068&id=456239232&hd=2&js_api=1&loop=1"
+                  title="Клип гденебо" loading="lazy" allowfullscreen
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
       </div>
+      <!-- TV bezel with a transparent screen, drawn above the video -->
+      <i class="px px--tvbtn" aria-hidden="true"></i>
+      <img class="tvframe" src="img/tv-frame.webp" width="1120" height="640" alt="" aria-hidden="true">
     </div>
-    <!-- TV bezel with a transparent screen, drawn above the video -->
-    <i class="px px--tvbtn" aria-hidden="true"></i>
-    <img class="tvframe" src="img/tv-frame.webp" width="1120" height="640" alt="" aria-hidden="true">
   </section>
 
   <!-- 3. MUSIC -->
   <section class="scene scene--music" id="music" aria-label="Музыка">
-    <i class="px px--vinyl" aria-hidden="true"></i>
+    <div class="stage"><i class="px px--vinyl" aria-hidden="true"></i></div>
     <div class="slot slot--music">
       <ul class="tracks">
         <li class="track">

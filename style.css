@@ -231,14 +231,12 @@ p { margin: 0; }
 }
 
 /* ---------- scenes (stacked, seamless) ---------- */
-.scene {
-  position: relative;
-  container-type: inline-size;
-  background-repeat: no-repeat; background-size: 100% 100%;
-}
-.scene--video    { aspect-ratio: 1920 / 1114; background-image: url(img/video.webp); }
-.scene--music    { aspect-ratio: 1920 / 975;  background-image: url(img/music.webp); }
-.scene--contacts { aspect-ratio: 1920 / 540;  background-image: url(img/contacts.webp); }
+.scene { position: relative; container-type: inline-size; overflow: hidden; }
+/* stage = the artwork plus everything registered to it (sprites, bezel, slots); on phones it is scaled up and cropped */
+.stage { position: relative; width: 100%; container-type: inline-size; background-repeat: no-repeat; background-size: 100% 100%; }
+.scene--video .stage { aspect-ratio: 1920 / 1114; background-image: url(img/video.webp); }
+.scene--music .stage { aspect-ratio: 1920 / 975;  background-image: url(img/music.webp); }
+.scene--contacts { aspect-ratio: 1920 / 540; background: url(img/contacts.webp) no-repeat; background-size: 100% 100%; }
 
 .slot { position: absolute; }
 .slot--video    { left: 29.167%; top: 32.675%; width: 42.708%; height: 44.165%; }  /* a little larger than the screen: the bezel covers the edges */
@@ -312,30 +310,28 @@ p { margin: 0; }
   .hero { height: 100svh; min-height: 480px; overflow: hidden; }
   .hero__img { height: 100%; object-fit: cover; object-position: 38% 14%; }
   .hot { display: none; }
-  .tvframe { display: none; }
-  .px { display: none; } /* sprites are registered to the landscape art only ... */
+  .hero .px { display: none; } /* hero sprites are registered to the landscape art only ... */
   /* ... except the billboard text, which follows the cover-cropped portrait art (941x1507, object-position 38% 14%) */
   .hero {
     --s: max(calc(100vw / 941), calc(100svh / 1507));
     --ox: calc((100vw - 941 * var(--s)) * .38);
     --oy: calc((100svh - 1507 * var(--s)) * .14);
   }
-  .px--text-m { display: block; left: calc(var(--ox) + var(--s) * 62); top: calc(var(--oy) + var(--s) * 338); width: calc(var(--s) * 196); }
+  .hero .px--text-m { display: block; left: calc(var(--ox) + var(--s) * 62); top: calc(var(--oy) + var(--s) * 338); width: calc(var(--s) * 196); }
 
-  /* art becomes a backdrop; content flows over it */
-  .scene { aspect-ratio: auto; background-size: cover; background-position: 50% 0; padding: clamp(110px, 30vw, 190px) 16px 40px; }
-  .slot { position: static; width: auto; height: auto; }
-  .slot--video { padding: 6px; background: #14121a; box-shadow: 0 0 0 4px #4a4a55; }
-  .screen { aspect-ratio: 16 / 9; height: auto; background: #070509; container-type: inline-size; }
-  .play__tri { border-left-width: 12cqw; border-top-width: 7cqw; border-bottom-width: 7cqw; }
-  .play__wave { height: 18cqw; gap: 1.2cqw; } .play__wave i { width: 1.8cqw; }
-
-  .slot--music { background: rgba(10, 6, 18, .88); padding: 12px; box-shadow: 0 0 0 3px #3c2a66; }
+  /* video + music: the same registered stage as on desktop, scaled up and cropped to the interesting part */
+  .scene--video .stage { width: 165vw; margin-left: -39.4vw; }   /* TV fills the width */
+  .scene--music .stage { width: 154vw; margin-left: 0; }          /* title + turntable */
+  .slot--music, .slot--contacts { position: static; width: auto; height: auto; }
+  .slot--music { margin: 0 16px 40px; background: rgba(10, 6, 18, .92); padding: 12px; box-shadow: 0 0 0 3px #3c2a66; }
+  .scene--music { background: #150d16; }
+  .track .links { flex-wrap: wrap; }
   .tracks { padding: 0; gap: 16px; }
   .track { flex-direction: column; align-items: flex-start; gap: 4px; }
   .track h3 { font-size: 20px; } .track p { font-size: 15px; }
   .track .btn { font-size: 16px; }
 
+  .scene--contacts { aspect-ratio: auto; background-size: cover; background-position: 50% 0; padding: 16px; }
   .scene--contacts { padding-top: 200px; }
   .slot--contacts { display: block; background: rgba(10, 6, 18, .88); padding: 16px; box-shadow: 0 0 0 3px #3c2a66; }
   .lead { font-size: 22px; margin-bottom: 6px; }
