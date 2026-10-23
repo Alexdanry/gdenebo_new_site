@@ -229,6 +229,50 @@ p { margin: 0; }
   94.444% { background-position-x: 100.0000%; }
 }
 
+/* TV knobs: the knob face turns in 22.5deg clicks (4 clicks = 90deg), long holds in between; the two knobs turn opposite ways */
+.px--knob-a, .px--knob-b { --n: 16; left: 75%; width: 4.1667%; aspect-ratio: 1; z-index: 3; }
+.px--knob-a { top: 33.482%; background-image: url(img/knob-a.png); animation: knob-a 6s step-end infinite; }
+.px--knob-b { top: 43.627%; background-image: url(img/knob-b.png); animation: knob-b 7.3s step-end infinite; }
+@keyframes knob-a {
+  0.000% { background-position-x: 0.0000%; }
+  16.667% { background-position-x: 6.6667%; }
+  18.333% { background-position-x: 13.3333%; }
+  20.000% { background-position-x: 20.0000%; }
+  21.667% { background-position-x: 26.6667%; }
+  50.000% { background-position-x: 33.3333%; }
+  51.667% { background-position-x: 40.0000%; }
+  53.333% { background-position-x: 46.6667%; }
+  55.000% { background-position-x: 53.3333%; }
+  66.667% { background-position-x: 60.0000%; }
+  68.333% { background-position-x: 66.6667%; }
+  70.000% { background-position-x: 73.3333%; }
+  71.667% { background-position-x: 80.0000%; }
+  93.333% { background-position-x: 86.6667%; }
+  95.000% { background-position-x: 93.3333%; }
+  96.667% { background-position-x: 100.0000%; }
+  98.333% { background-position-x: 0.0000%; }
+}
+@keyframes knob-b {
+  0.000% { background-position-x: 0.0000%; }
+  20.548% { background-position-x: 100.0000%; }
+  21.918% { background-position-x: 93.3333%; }
+  23.288% { background-position-x: 86.6667%; }
+  24.658% { background-position-x: 80.0000%; }
+  47.945% { background-position-x: 73.3333%; }
+  49.315% { background-position-x: 66.6667%; }
+  50.685% { background-position-x: 60.0000%; }
+  52.055% { background-position-x: 53.3333%; }
+  71.233% { background-position-x: 46.6667%; }
+  72.603% { background-position-x: 40.0000%; }
+  73.973% { background-position-x: 33.3333%; }
+  75.342% { background-position-x: 26.6667%; }
+  90.411% { background-position-x: 20.0000%; }
+  91.781% { background-position-x: 13.3333%; }
+  93.151% { background-position-x: 6.6667%; }
+  94.521% { background-position-x: 0.0000%; }
+}
+
+
 /* ---------- scenes (stacked, seamless) ---------- */
 .scene { position: relative; container-type: inline-size; overflow: hidden; }
 /* stage = the artwork plus everything registered to it (sprites, bezel, slots); on phones it is scaled up and cropped */
