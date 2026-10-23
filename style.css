@@ -36,7 +36,7 @@ p { margin: 0; }
 /* ---------- hero ---------- */
 .hero { position: relative; }
 .hero__img { width: 100%; height: auto; image-rendering: pixelated; }
-.hot a { position: absolute; top: 6.1%; height: 6.9%; border-radius: 6px; }
+.hot a { position: absolute; top: 6.9%; height: 5.7%; border-radius: 6px; }
 .hot a:focus-visible { outline: 3px solid var(--yellow); }
 .hot a:hover { background: rgba(255, 201, 51, .12); }
 
@@ -294,14 +294,14 @@ p { margin: 0; }
     padding: 8px 12px 0; pointer-events: none;
   }
   .mnav nav {
-    pointer-events: auto; max-width: 560px; margin: 0 auto; height: 44px;
+    pointer-events: auto; max-width: 480px; margin: 0 auto; height: 38px;
     display: grid; grid-template-columns: repeat(3, 1fr);
     background: rgba(10, 6, 18, .92);
     box-shadow: 0 -3px 0 #6b5a3a, 0 3px 0 #6b5a3a, -3px 0 0 #6b5a3a, 3px 0 0 #6b5a3a;
   }
   .mnav a {
     display: grid; place-items: center; color: var(--yellow); font-weight: 700;
-    font-size: clamp(14px, 3.8vw, 20px); border-left: 2px solid #3a2c18;
+    font-size: clamp(13px, 3.4vw, 18px); border-left: 2px solid #3a2c18;
   }
   .mnav a:first-child { border-left: 0; }
   .mnav a:active { background: var(--yellow); color: var(--line); }
