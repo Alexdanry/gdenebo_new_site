@@ -190,6 +190,23 @@ p { margin: 0; }
   80%  { background-position-x: 100%; }
 }
 
+/* TV orange button: blink in held poses (flash, dim, off), dithered glow on the metal; sits above the bezel */
+.px--tvbtn { --n: 4; left: 77.8125%; top: 53.680%; width: 2.5%; aspect-ratio: 48 / 42; background-image: url(img/tv-btn.png); z-index: 3; animation: tvbtn 4s step-end infinite; }
+@keyframes tvbtn {
+  0.000% { background-position-x: 100.0000%; }
+  15.000% { background-position-x: 0.0000%; }
+  17.500% { background-position-x: 33.3333%; }
+  20.000% { background-position-x: 66.6667%; }
+  35.000% { background-position-x: 33.3333%; }
+  37.500% { background-position-x: 0.0000%; }
+  50.000% { background-position-x: 100.0000%; }
+  62.500% { background-position-x: 66.6667%; }
+  67.500% { background-position-x: 100.0000%; }
+  70.000% { background-position-x: 66.6667%; }
+  75.000% { background-position-x: 100.0000%; }
+  77.500% { background-position-x: 0.0000%; }
+}
+
 /* ---------- scenes (stacked, seamless) ---------- */
 .scene {
   position: relative;
