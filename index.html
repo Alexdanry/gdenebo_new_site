@@ -57,8 +57,9 @@
   <section class="scene scene--video" id="video" aria-label="Видео">
     <div class="slot slot--video">
       <div class="screen">
-        <!-- Замени на iframe клипа: <iframe src="https://www.youtube.com/embed/ID" allowfullscreen></iframe> -->
-        <a class="play" href="#" aria-label="Смотреть клип">
+        <!-- VK video: click loads the player (autoplay); without JS the link opens the video on VK -->
+        <a class="play" id="play" href="https://vkvideo.ru/video-128118068_456239232" target="_blank" rel="noopener"
+           data-embed="https://vk.com/video_ext.php?oid=-128118068&id=456239232&hd=2&autoplay=1" aria-label="Смотреть клип">
           <span class="play__tri"></span>
           <span class="play__wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
         </a>
@@ -108,5 +109,16 @@
   <a href="#top">наверх ▲</a>
 </footer>
 
+<script>
+  document.getElementById('play').addEventListener('click', function (e) {
+    e.preventDefault();
+    var f = document.createElement('iframe');
+    f.src = this.dataset.embed;
+    f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
+    f.allowFullscreen = true;
+    f.title = 'Клип гденебо';
+    this.replaceWith(f);
+  });
+</script>
 </body>
 </html>
