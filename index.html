@@ -76,12 +76,14 @@
   <section class="scene scene--music" id="music" aria-label="Музыка">
     <div class="stage"><i class="px px--vinyl" aria-hidden="true"></i></div>
     <div class="slot slot--music">
-      <div class="player" id="player">
-        <iframe id="ymusic" style="border-radius:12px" frameborder="0" width="100%" height="470"
-                title="Spotify: гденебо" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
-                src="https://open.spotify.com/embed/artist/1uYlEnMz2OyrIvt9TrfFQ6?utm_source=generator&theme=0&si=71c9513e6f7749d8"></iframe>
-      </div>
+      <ul class="plat">
+        <li><a class="plat__a" href="https://vk.com/artist/gdenebo" target="_blank" rel="noopener">
+          <img src="img/icon-vk.png" width="96" height="96" alt=""><span>VK Музыка</span></a></li>
+        <li><a class="plat__a" href="https://music.yandex.ru/artist/8538172" target="_blank" rel="noopener">
+          <img src="img/icon-yandex.png" width="96" height="96" alt=""><span>Яндекс Музыка</span></a></li>
+        <li><a class="plat__a" href="https://open.spotify.com/artist/1uYlEnMz2OyrIvt9TrfFQ6?si=vx1tbPylQhm6BDXislVgFA" target="_blank" rel="noopener">
+          <img src="img/icon-spotify.png" width="96" height="96" alt=""><span>Spotify</span></a></li>
+      </ul>
     </div>
   </section>
 
@@ -127,24 +129,6 @@
     var bar = document.querySelector('.mnav'), hero = document.querySelector('.hero-clip');
     function upd() { bar.classList.toggle('on', hero.getBoundingClientRect().bottom < 60); }
     addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
-  })();
-</script>
-<script>
-  /* Spotify's header (artist, subscribe, controls) is cut off by the panel edge so only the track list shows.
-     The iframe is cross-origin, so it is shifted up by HDR px inside the clipped panel.
-     desktop: scaled to the panel in the art; phones: natural size, CSS does the shift */
-  (function () {
-    var HDR = 200, FULL = 470;
-    var box = document.getElementById('player'), f = document.getElementById('ymusic');
-    var mq = matchMedia('(max-width: 899px)');
-    function fit() {
-      if (mq.matches) { f.style.width = f.style.height = f.style.transform = ''; return; }
-      var s = box.clientHeight / (FULL - HDR);
-      f.style.height = FULL + 'px';
-      f.style.width = (box.clientWidth / s) + 'px';
-      f.style.transform = 'scale(' + s + ') translateY(-' + HDR + 'px)';
-    }
-    new ResizeObserver(fit).observe(box); fit();
   })();
 </script>
 </body>

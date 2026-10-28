@@ -273,6 +273,18 @@ p { margin: 0; }
 }
 
 
+/* music board: three platform icons, each a link; stepped bob (pixel feel), hop on hover */
+.plat { height: 100%; display: flex; align-items: center; justify-content: space-evenly; gap: 1.2cqw; padding: 0 1.2cqw; }
+.plat__a { display: grid; justify-items: center; gap: .8cqw; color: var(--ink); font-weight: 700; font-size: max(11px, 1.55cqw); text-align: center; }
+.plat__a img { width: 10.4cqw; height: 10.4cqw; image-rendering: pixelated; animation: plat-bob 1.6s steps(2) infinite; }
+.plat li:nth-child(2) img { animation-delay: -.5s; } .plat li:nth-child(3) img { animation-delay: -1s; }
+.plat__a span { min-height: 2.4em; line-height: 1.2; display: grid; align-items: start; }
+.plat__a:hover img, .plat__a:focus-visible img { animation: plat-hop .5s steps(3) infinite; filter: brightness(1.15) saturate(1.2); }
+.plat__a:hover span, .plat__a:focus-visible span { color: var(--yellow); }
+.plat__a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 6px; }
+@keyframes plat-bob { 0% { transform: translateY(0); } 50% { transform: translateY(-.5cqw); } }
+@keyframes plat-hop { 0% { transform: translateY(0); } 33% { transform: translateY(-1.4cqw); } 66% { transform: translateY(-.7cqw); } }
+
 /* ---------- scenes (stacked, seamless) ---------- */
 .scene { position: relative; container-type: inline-size; overflow: hidden; }
 /* stage = the artwork plus everything registered to it (sprites, bezel, slots); on phones it is scaled up and cropped */
@@ -285,8 +297,6 @@ p { margin: 0; }
 .slot--video    { left: 29.167%; top: 32.675%; width: 42.708%; height: 44.165%; }  /* a little larger than the screen: the bezel covers the edges */
 .tvframe { position: absolute; left: 25%; top: 26.929%; width: 58.333%; height: auto; pointer-events: none; z-index: 2; }
 .slot--music    { left: 51.8%; top: 25.1%; width: 36.8%; height: 36.9%; }
-.player { position: relative; width: 100%; height: 100%; overflow: hidden; }
-.player iframe { display: block; border: 0; transform-origin: 0 0; }
 .slot--contacts { left: 8%; top: 45%; width: 84%; height: 48%; display: grid; grid-template-columns: 1fr 1fr; gap: 3cqw; align-items: center; }
 
 /* video */
@@ -356,8 +366,10 @@ p { margin: 0; }
   .scene--video .stage { width: 165vw; margin-left: -39.4vw; }   /* TV fills the width */
   .scene--music .stage { width: 154vw; margin-left: 0; }          /* title + turntable */
   .slot--music, .slot--contacts { position: static; width: auto; height: auto; }
-  .player { height: 300px; }
-  .player iframe { width: 87%; height: 560px; transform: scale(1.15) translateY(-200px); }  /* list text 15% larger than natural */
+  .plat { height: auto; padding: 8px 0 4px; flex-wrap: wrap; gap: 20px 8px; }
+  .plat__a { font-size: 15px; gap: 8px; }
+  .plat__a span { min-height: 0; }
+  .plat__a img { width: 84px; height: 84px; }
   .slot--music { margin: 0 16px 40px; background: rgba(10, 6, 18, .92); padding: 12px; box-shadow: 0 0 0 3px #3c2a66; }
   .scene--music { background: #150d16; }
 

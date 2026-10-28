@@ -259,6 +259,17 @@
   93.151% { background-position-x: 6.6667%; }
   94.521% { background-position-x: 0.0000%; }
 }
+.gd .plat { height: 100%; display: flex; align-items: center; justify-content: space-evenly; gap: 1.2cqw; padding: 0 1.2cqw; }
+.gd .plat__a { display: grid; justify-items: center; gap: .8cqw; color: var(--ink); font-weight: 700; font-size: max(11px, 1.55cqw); text-align: center; }
+.gd .plat__a img { width: 10.4cqw; height: 10.4cqw; image-rendering: pixelated; animation: gd-plat-bob 1.6s steps(2) infinite; }
+.gd .plat li:nth-child(2) img { animation-delay: -.5s; }
+.gd .plat li:nth-child(3) img { animation-delay: -1s; }
+.gd .plat__a span { min-height: 2.4em; line-height: 1.2; display: grid; align-items: start; }
+.gd .plat__a:hover img, .gd .plat__a:focus-visible img { animation: gd-plat-hop .5s steps(3) infinite; filter: brightness(1.15) saturate(1.2); }
+.gd .plat__a:hover span, .gd .plat__a:focus-visible span { color: var(--yellow); }
+.gd .plat__a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 6px; }
+@keyframes gd-plat-bob { 0% { transform: translateY(0); } 50% { transform: translateY(-.5cqw); } }
+@keyframes gd-plat-hop { 0% { transform: translateY(0); } 33% { transform: translateY(-1.4cqw); } 66% { transform: translateY(-.7cqw); } }
 .gd .scene { position: relative; container-type: inline-size; overflow: hidden; }
 .gd .stage { position: relative; width: 100%; container-type: inline-size; background-repeat: no-repeat; background-size: 100% 100%; }
 .gd .scene--video .stage { aspect-ratio: 1920 / 1114; background-image: url(https://gdenebo.onrender.com/img/video.webp); }
@@ -268,8 +279,6 @@
 .gd .slot--video { left: 29.167%; top: 32.675%; width: 42.708%; height: 44.165%; }
 .gd .tvframe { position: absolute; left: 25%; top: 26.929%; width: 58.333%; height: auto; pointer-events: none; z-index: 2; }
 .gd .slot--music { left: 51.8%; top: 25.1%; width: 36.8%; height: 36.9%; }
-.gd .player { position: relative; width: 100%; height: 100%; overflow: hidden; }
-.gd .player iframe { display: block; border: 0; transform-origin: 0 0; }
 .gd .slot--contacts { left: 8%; top: 45%; width: 84%; height: 48%; display: grid; grid-template-columns: 1fr 1fr; gap: 3cqw; align-items: center; }
 .gd .screen { position: relative; width: 100%; height: 100%; overflow: hidden; }
 .gd .screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -324,8 +333,10 @@
 .gd .scene--video .stage { width: 165vw; margin-left: -39.4vw; }
 .gd .scene--music .stage { width: 154vw; margin-left: 0; }
 .gd .slot--music, .gd .slot--contacts { position: static; width: auto; height: auto; }
-.gd .player { height: 300px; }
-.gd .player iframe { width: 87%; height: 560px; transform: scale(1.15) translateY(-200px); }
+.gd .plat { height: auto; padding: 8px 0 4px; flex-wrap: wrap; gap: 20px 8px; }
+.gd .plat__a { font-size: 15px; gap: 8px; }
+.gd .plat__a span { min-height: 0; }
+.gd .plat__a img { width: 84px; height: 84px; }
 .gd .slot--music { margin: 0 16px 40px; background: rgba(10, 6, 18, .92); padding: 12px; box-shadow: 0 0 0 3px #3c2a66; }
 .gd .scene--music { background: #150d16; }
 .gd .scene--contacts { aspect-ratio: auto; background-size: cover; background-position: 50% 0; padding: 16px; }
@@ -402,12 +413,14 @@
   <section class="scene scene--music" id="music" aria-label="Музыка">
     <div class="stage"><i class="px px--vinyl" aria-hidden="true"></i></div>
     <div class="slot slot--music">
-      <div class="player" id="player">
-        <iframe id="ymusic" style="border-radius:12px" frameborder="0" width="100%" height="470"
-                title="Spotify: гденебо" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
-                src="https://open.spotify.com/embed/artist/1uYlEnMz2OyrIvt9TrfFQ6?utm_source=generator&theme=0&si=71c9513e6f7749d8"></iframe>
-      </div>
+      <ul class="plat">
+        <li><a class="plat__a" href="https://vk.com/artist/gdenebo" target="_blank" rel="noopener">
+          <img src="https://gdenebo.onrender.com/img/icon-vk.png" width="96" height="96" alt=""><span>VK Музыка</span></a></li>
+        <li><a class="plat__a" href="https://music.yandex.ru/artist/8538172" target="_blank" rel="noopener">
+          <img src="https://gdenebo.onrender.com/img/icon-yandex.png" width="96" height="96" alt=""><span>Яндекс Музыка</span></a></li>
+        <li><a class="plat__a" href="https://open.spotify.com/artist/1uYlEnMz2OyrIvt9TrfFQ6?si=vx1tbPylQhm6BDXislVgFA" target="_blank" rel="noopener">
+          <img src="https://gdenebo.onrender.com/img/icon-spotify.png" width="96" height="96" alt=""><span>Spotify</span></a></li>
+      </ul>
     </div>
   </section>
 
@@ -452,23 +465,6 @@
     var bar = document.querySelector('.mnav'), hero = document.querySelector('.hero-clip');
     function upd() { bar.classList.toggle('on', hero.getBoundingClientRect().bottom < 60); }
     addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
-  })();
-</script><script>
-  /* Spotify's header (artist, subscribe, controls) is cut off by the panel edge so only the track list shows.
-     The iframe is cross-origin, so it is shifted up by HDR px inside the clipped panel.
-     desktop: scaled to the panel in the art; phones: natural size, CSS does the shift */
-  (function () {
-    var HDR = 200, FULL = 470;
-    var box = document.getElementById('player'), f = document.getElementById('ymusic');
-    var mq = matchMedia('(max-width: 899px)');
-    function fit() {
-      if (mq.matches) { f.style.width = f.style.height = f.style.transform = ''; return; }
-      var s = box.clientHeight / (FULL - HDR);
-      f.style.height = FULL + 'px';
-      f.style.width = (box.clientWidth / s) + 'px';
-      f.style.transform = 'scale(' + s + ') translateY(-' + HDR + 'px)';
-    }
-    new ResizeObserver(fit).observe(box); fit();
   })();
 </script>
 <script>document.documentElement.style.scrollBehavior='smooth';</script>
