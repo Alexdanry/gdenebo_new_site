@@ -1,0 +1,474 @@
+<!-- gdenebo: paste into a Tilda "HTML" (T123) block. Images come from https://gdenebo.onrender.com/ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+.gd {
+  --bg: #0a0612;
+  --ink: #fff4d6;
+  --muted: #c4b5df;
+  --yellow: #ffc933;
+  --red: #d8322b;
+  --line: #0a0612;
+  --font: "Pixelify Sans", monospace;
+}
+.gd *, .gd *::before, .gd *::after { box-sizing: border-box; }
+.gd { scroll-behavior: smooth; }
+.gd {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font); font-size: 18px; line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+.gd img { display: block; max-width: 100%; }
+.gd a { color: inherit; text-decoration: none; }
+.gd ul { list-style: none; margin: 0; padding: 0; }
+.gd p { margin: 0; }
+.gd .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.gd .btn {
+  --f: var(--yellow);
+  display: inline-block; padding: .45em .9em; margin: 4px;
+  background: var(--line); color: var(--yellow);
+  font-weight: 700; line-height: 1.2; text-align: center; white-space: nowrap;
+  box-shadow: 0 -3px 0 0 var(--f), 0 3px 0 0 var(--f), -3px 0 0 0 var(--f), 3px 0 0 0 var(--f);
+  transition: transform .1s, background .15s, color .15s;
+}
+.gd .btn:hover, .gd .btn:focus-visible { background: var(--yellow); color: var(--line); outline: none; transform: translateY(-2px); }
+.gd .links { display: flex; flex-wrap: wrap; align-items: center; }
+.gd .hero { position: relative; }
+.gd .hero__img { width: 100%; height: auto; image-rendering: pixelated; }
+.gd .hot a { position: absolute; top: 6.9%; height: 5.7%; border-radius: 6px; }
+.gd .hot a:focus-visible { outline: 3px solid var(--yellow); }
+.gd .hot a:hover { background: rgba(255, 201, 51, .12); }
+.gd .px {
+  position: absolute; pointer-events: none;
+  background-repeat: no-repeat; background-size: calc(var(--n) * 100%) 100%;
+  image-rendering: pixelated;
+  animation-timing-function: step-end; animation-iteration-count: infinite;
+}
+.gd .px--lamp-l { --n: 3; left: 35.156%; top: 21.489%; width: 3.906%; aspect-ratio: 75 / 45; background-image: url(https://gdenebo.onrender.com/img/lamp-l.png); animation: gd-lamp-l 6s step-end infinite; }
+.gd .px--lamp-r { --n: 3; left: 61.458%; top: 21.489%; width: 3.906%; aspect-ratio: 75 / 45; background-image: url(https://gdenebo.onrender.com/img/lamp-r.png); animation: gd-lamp-r 7.3s step-end infinite; }
+.gd .px--fx-l { --n: 11; left: 33.958%; top: 19.237%; width: 6.25%; aspect-ratio: 120 / 100; background-image: url(https://gdenebo.onrender.com/img/fx-l.png); animation: gd-fx-l 6s step-end infinite; }
+.gd .px--fx-r { --n: 11; left: 60.365%; top: 19.237%; width: 6.25%; aspect-ratio: 120 / 100; background-image: url(https://gdenebo.onrender.com/img/fx-r.png); animation: gd-fx-r 7.3s step-end infinite; }
+.gd .px--cat { --n: 5; left: 79.688%; top: 57.192%; width: 3.646%; aspect-ratio: 1; background-image: url(https://gdenebo.onrender.com/img/cat.png); animation: gd-cat 10s step-end infinite; }
+.gd .px--stars-a, .gd .px--stars-b, .gd .px--stars-c { --n: 3; inset: 0; width: 100%; height: 100%; }
+.gd .px--stars-a { background-image: url(https://gdenebo.onrender.com/img/stars-a.png); animation: gd-stars-a 4s step-end infinite; }
+.gd .px--stars-b { background-image: url(https://gdenebo.onrender.com/img/stars-b.png); animation: gd-stars-b 5.5s step-end infinite; }
+.gd .px--stars-c { background-image: url(https://gdenebo.onrender.com/img/stars-c.png); animation: gd-stars-c 7s step-end infinite; }
+@keyframes gd-lamp-l {
+  0.000% { background-position-x: 0.0000%; }
+  41.667% { background-position-x: 50.0000%; }
+  43.333% { background-position-x: 0.0000%; }
+  45.000% { background-position-x: 100.0000%; }
+  48.333% { background-position-x: 50.0000%; }
+  50.000% { background-position-x: 100.0000%; }
+  53.333% { background-position-x: 50.0000%; }
+  55.000% { background-position-x: 0.0000%; }
+  58.333% { background-position-x: 50.0000%; }
+  60.000% { background-position-x: 0.0000%; }
+}
+@keyframes gd-lamp-r {
+  0.000% { background-position-x: 0.0000%; }
+  54.795% { background-position-x: 50.0000%; }
+  56.164% { background-position-x: 100.0000%; }
+  58.904% { background-position-x: 50.0000%; }
+  60.274% { background-position-x: 100.0000%; }
+  63.014% { background-position-x: 0.0000%; }
+  86.301% { background-position-x: 50.0000%; }
+  87.671% { background-position-x: 100.0000%; }
+  89.041% { background-position-x: 50.0000%; }
+  90.411% { background-position-x: 0.0000%; }
+}
+@keyframes gd-fx-l {
+  0.000% { background-position-x: 30.0000%; }
+  41.667% { background-position-x: 20.0000%; }
+  43.333% { background-position-x: 30.0000%; }
+  45.000% { background-position-x: 0.0000%; }
+  48.333% { background-position-x: 10.0000%; }
+  50.000% { background-position-x: 0.0000%; }
+  53.333% { background-position-x: 10.0000%; }
+  55.000% { background-position-x: 40.0000%; }
+  56.667% { background-position-x: 50.0000%; }
+  58.333% { background-position-x: 60.0000%; }
+  60.000% { background-position-x: 70.0000%; }
+  61.667% { background-position-x: 30.0000%; }
+  83.333% { background-position-x: 80.0000%; }
+  85.000% { background-position-x: 90.0000%; }
+  86.667% { background-position-x: 100.0000%; }
+  88.333% { background-position-x: 30.0000%; }
+}
+@keyframes gd-fx-r {
+  0.000% { background-position-x: 30.0000%; }
+  27.397% { background-position-x: 80.0000%; }
+  28.767% { background-position-x: 90.0000%; }
+  30.137% { background-position-x: 100.0000%; }
+  31.507% { background-position-x: 30.0000%; }
+  54.795% { background-position-x: 20.0000%; }
+  56.164% { background-position-x: 0.0000%; }
+  58.904% { background-position-x: 10.0000%; }
+  60.274% { background-position-x: 0.0000%; }
+  63.014% { background-position-x: 40.0000%; }
+  64.384% { background-position-x: 50.0000%; }
+  65.753% { background-position-x: 60.0000%; }
+  67.123% { background-position-x: 70.0000%; }
+  68.493% { background-position-x: 30.0000%; }
+  86.301% { background-position-x: 20.0000%; }
+  87.671% { background-position-x: 0.0000%; }
+  89.041% { background-position-x: 10.0000%; }
+  90.411% { background-position-x: 40.0000%; }
+  91.781% { background-position-x: 50.0000%; }
+  93.151% { background-position-x: 60.0000%; }
+  94.521% { background-position-x: 70.0000%; }
+  95.890% { background-position-x: 30.0000%; }
+}
+@keyframes gd-cat {
+  0.000% { background-position-x: 0.0000%; }
+  16.000% { background-position-x: 100.0000%; }
+  18.000% { background-position-x: 75.0000%; }
+  19.000% { background-position-x: 0.0000%; }
+  20.000% { background-position-x: 25.0000%; }
+  34.000% { background-position-x: 0.0000%; }
+  38.000% { background-position-x: 75.0000%; }
+  39.000% { background-position-x: 0.0000%; }
+  48.000% { background-position-x: 50.0000%; }
+  62.000% { background-position-x: 0.0000%; }
+  80.000% { background-position-x: 100.0000%; }
+  81.000% { background-position-x: 0.0000%; }
+  82.000% { background-position-x: 100.0000%; }
+  83.000% { background-position-x: 0.0000%; }
+}
+@keyframes gd-stars-a {
+  0.000% { background-position-x: 0.0000%; }
+  12.500% { background-position-x: 50.0000%; }
+  15.000% { background-position-x: 100.0000%; }
+  20.000% { background-position-x: 50.0000%; }
+  22.500% { background-position-x: 0.0000%; }
+  62.500% { background-position-x: 50.0000%; }
+  65.000% { background-position-x: 100.0000%; }
+  67.500% { background-position-x: 50.0000%; }
+  70.000% { background-position-x: 0.0000%; }
+}
+@keyframes gd-stars-b {
+  0.000% { background-position-x: 0.0000%; }
+  21.818% { background-position-x: 50.0000%; }
+  23.636% { background-position-x: 100.0000%; }
+  25.455% { background-position-x: 50.0000%; }
+  27.273% { background-position-x: 0.0000%; }
+  60.000% { background-position-x: 50.0000%; }
+  61.818% { background-position-x: 100.0000%; }
+  65.455% { background-position-x: 50.0000%; }
+  67.273% { background-position-x: 0.0000%; }
+  85.455% { background-position-x: 50.0000%; }
+  89.091% { background-position-x: 0.0000%; }
+}
+@keyframes gd-stars-c {
+  0.000% { background-position-x: 0.0000%; }
+  4.286% { background-position-x: 50.0000%; }
+  7.143% { background-position-x: 0.0000%; }
+  58.571% { background-position-x: 50.0000%; }
+  60.000% { background-position-x: 100.0000%; }
+  62.857% { background-position-x: 50.0000%; }
+  64.286% { background-position-x: 0.0000%; }
+  85.714% { background-position-x: 50.0000%; }
+  87.143% { background-position-x: 100.0000%; }
+  88.571% { background-position-x: 50.0000%; }
+  90.000% { background-position-x: 0.0000%; }
+}
+.gd .px--text { --n: 5; animation: gd-text-shimmer 1s step-end infinite; }
+.gd .px--text-d { left: 6.771%; top: 26.430%; width: 14.583%; aspect-ratio: 280 / 355; background-image: url(https://gdenebo.onrender.com/img/text-d.png); image-rendering: auto; }
+@keyframes gd-text-shimmer {
+  0%   { background-position-x: 0%; }
+  20%  { background-position-x: 25%; }
+  40%  { background-position-x: 50%; }
+  60%  { background-position-x: 75%; }
+  80%  { background-position-x: 100%; }
+}
+.gd .px--tvbtn { --n: 4; left: 77.8125%; top: 53.680%; width: 2.5%; aspect-ratio: 48 / 42; background-image: url(https://gdenebo.onrender.com/img/tv-btn.png); z-index: 3; animation: gd-tvbtn 4s step-end infinite; }
+@keyframes gd-tvbtn {
+  0.000% { background-position-x: 100.0000%; }
+  15.000% { background-position-x: 0.0000%; }
+  17.500% { background-position-x: 33.3333%; }
+  20.000% { background-position-x: 66.6667%; }
+  35.000% { background-position-x: 33.3333%; }
+  37.500% { background-position-x: 0.0000%; }
+  50.000% { background-position-x: 100.0000%; }
+  62.500% { background-position-x: 66.6667%; }
+  67.500% { background-position-x: 100.0000%; }
+  70.000% { background-position-x: 66.6667%; }
+  75.000% { background-position-x: 100.0000%; }
+  77.500% { background-position-x: 0.0000%; }
+}
+.gd .px--vinyl { --n: 18; left: 19.6875%; top: 32.615%; width: 22.344%; aspect-ratio: 429 / 159; background-image: url(https://gdenebo.onrender.com/img/vinyl.png); animation: gd-vinyl 1.8s step-end infinite; }
+@keyframes gd-vinyl {
+  0.000% { background-position-x: 0.0000%; }
+  5.556% { background-position-x: 5.8824%; }
+  11.111% { background-position-x: 11.7647%; }
+  16.667% { background-position-x: 17.6471%; }
+  22.222% { background-position-x: 23.5294%; }
+  27.778% { background-position-x: 29.4118%; }
+  33.333% { background-position-x: 35.2941%; }
+  38.889% { background-position-x: 41.1765%; }
+  44.444% { background-position-x: 47.0588%; }
+  50.000% { background-position-x: 52.9412%; }
+  55.556% { background-position-x: 58.8235%; }
+  61.111% { background-position-x: 64.7059%; }
+  66.667% { background-position-x: 70.5882%; }
+  72.222% { background-position-x: 76.4706%; }
+  77.778% { background-position-x: 82.3529%; }
+  83.333% { background-position-x: 88.2353%; }
+  88.889% { background-position-x: 94.1176%; }
+  94.444% { background-position-x: 100.0000%; }
+}
+.gd .px--knob-a, .gd .px--knob-b { --n: 16; left: 75%; width: 4.1667%; aspect-ratio: 1; z-index: 3; }
+.gd .px--knob-a { top: 33.482%; background-image: url(https://gdenebo.onrender.com/img/knob-a.png); animation: gd-knob-a 6s step-end infinite; }
+.gd .px--knob-b { top: 43.627%; background-image: url(https://gdenebo.onrender.com/img/knob-b.png); animation: gd-knob-b 7.3s step-end infinite; }
+@keyframes gd-knob-a {
+  0.000% { background-position-x: 0.0000%; }
+  16.667% { background-position-x: 6.6667%; }
+  18.333% { background-position-x: 13.3333%; }
+  20.000% { background-position-x: 20.0000%; }
+  21.667% { background-position-x: 26.6667%; }
+  50.000% { background-position-x: 33.3333%; }
+  51.667% { background-position-x: 40.0000%; }
+  53.333% { background-position-x: 46.6667%; }
+  55.000% { background-position-x: 53.3333%; }
+  66.667% { background-position-x: 60.0000%; }
+  68.333% { background-position-x: 66.6667%; }
+  70.000% { background-position-x: 73.3333%; }
+  71.667% { background-position-x: 80.0000%; }
+  93.333% { background-position-x: 86.6667%; }
+  95.000% { background-position-x: 93.3333%; }
+  96.667% { background-position-x: 100.0000%; }
+  98.333% { background-position-x: 0.0000%; }
+}
+@keyframes gd-knob-b {
+  0.000% { background-position-x: 0.0000%; }
+  20.548% { background-position-x: 100.0000%; }
+  21.918% { background-position-x: 93.3333%; }
+  23.288% { background-position-x: 86.6667%; }
+  24.658% { background-position-x: 80.0000%; }
+  47.945% { background-position-x: 73.3333%; }
+  49.315% { background-position-x: 66.6667%; }
+  50.685% { background-position-x: 60.0000%; }
+  52.055% { background-position-x: 53.3333%; }
+  71.233% { background-position-x: 46.6667%; }
+  72.603% { background-position-x: 40.0000%; }
+  73.973% { background-position-x: 33.3333%; }
+  75.342% { background-position-x: 26.6667%; }
+  90.411% { background-position-x: 20.0000%; }
+  91.781% { background-position-x: 13.3333%; }
+  93.151% { background-position-x: 6.6667%; }
+  94.521% { background-position-x: 0.0000%; }
+}
+.gd .scene { position: relative; container-type: inline-size; overflow: hidden; }
+.gd .stage { position: relative; width: 100%; container-type: inline-size; background-repeat: no-repeat; background-size: 100% 100%; }
+.gd .scene--video .stage { aspect-ratio: 1920 / 1114; background-image: url(https://gdenebo.onrender.com/img/video.webp); }
+.gd .scene--music .stage { aspect-ratio: 1920 / 975;  background-image: url(https://gdenebo.onrender.com/img/music.webp); }
+.gd .scene--contacts { aspect-ratio: 1920 / 540; background: url(https://gdenebo.onrender.com/img/contacts.webp) no-repeat; background-size: 100% 100%; }
+.gd .slot { position: absolute; }
+.gd .slot--video { left: 29.167%; top: 32.675%; width: 42.708%; height: 44.165%; }
+.gd .tvframe { position: absolute; left: 25%; top: 26.929%; width: 58.333%; height: auto; pointer-events: none; z-index: 2; }
+.gd .slot--music { left: 51.8%; top: 25.1%; width: 36.8%; height: 36.9%; }
+.gd .player { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.gd .player iframe { display: block; border: 0; transform-origin: 0 0; }
+.gd .slot--contacts { left: 8%; top: 45%; width: 84%; height: 48%; display: grid; grid-template-columns: 1fr 1fr; gap: 3cqw; align-items: center; }
+.gd .screen { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.gd .screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.gd .screen::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,.035) 0 1px, transparent 1px 3px);
+}
+.gd .play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 4cqw; }
+.gd .play__tri {
+  border-left: 5cqw solid var(--red);
+  border-top: 3cqw solid transparent; border-bottom: 3cqw solid transparent;
+  transition: transform .15s;
+}
+.gd .play:hover .play__tri { transform: scale(1.12); }
+.gd .play__wave { display: flex; align-items: center; gap: .5cqw; height: 8cqw; }
+.gd .play__wave i { width: .7cqw; height: 30%; background: var(--ink); animation: gd-eq 1.2s steps(4) infinite; }
+.gd .play__wave i:nth-child(odd) { animation-delay: -.4s; }
+.gd .play__wave i:nth-child(3n) { animation-delay: -.8s; }
+@keyframes gd-eq { 0%, 100% { height: 25%; } 50% { height: 100%; } }
+.gd .lead { font-size: max(14px, 1.9cqw); font-weight: 700; color: var(--ink); margin-bottom: .6cqw; }
+.gd .about p:last-child { font-size: max(12px, 1.3cqw); color: var(--muted); }
+.gd .links--contacts { justify-content: flex-end; }
+.gd .links--contacts .btn { font-size: max(12px, 1.35cqw); }
+.gd .foot {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  padding: 20px 24px; background: var(--line); color: var(--muted); font-size: 15px;
+}
+.gd .foot a:hover { color: var(--yellow); }
+.gd .mnav { display: none; }
+@media (max-width: 899px) {
+.gd { scroll-padding-top: 64px; }
+.gd .mnav {
+    display: block; position: fixed; inset: 0 0 auto 0; z-index: 10;
+    padding: 8px 12px 0; pointer-events: none;
+  }
+.gd .mnav nav {
+    pointer-events: auto; max-width: 480px; margin: 0 auto; height: 38px;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    background: rgba(10, 6, 18, .92);
+    box-shadow: 0 -3px 0 #6b5a3a, 0 3px 0 #6b5a3a, -3px 0 0 #6b5a3a, 3px 0 0 #6b5a3a;
+  }
+.gd .mnav a {
+    display: grid; place-items: center; color: var(--yellow); font-weight: 700;
+    font-size: clamp(13px, 3.4vw, 18px); border-left: 2px solid #3a2c18;
+  }
+.gd .mnav a:first-child { border-left: 0; }
+.gd .mnav a:active { background: var(--yellow); color: var(--line); }
+.gd .hero-clip { overflow: hidden; }
+.gd .hero { width: 151.5vw; margin-left: -27.3vw; }
+.gd .mnav { transform: translateY(-120%); transition: transform .2s; }
+.gd .mnav.on { transform: none; }
+.gd .scene--video .stage { width: 165vw; margin-left: -39.4vw; }
+.gd .scene--music .stage { width: 154vw; margin-left: 0; }
+.gd .slot--music, .gd .slot--contacts { position: static; width: auto; height: auto; }
+.gd .player { height: 300px; }
+.gd .player iframe { width: 87%; height: 560px; transform: scale(1.15) translateY(-200px); }
+.gd .slot--music { margin: 0 16px 40px; background: rgba(10, 6, 18, .92); padding: 12px; box-shadow: 0 0 0 3px #3c2a66; }
+.gd .scene--music { background: #150d16; }
+.gd .scene--contacts { aspect-ratio: auto; background-size: cover; background-position: 50% 0; padding: 16px; }
+.gd .scene--contacts { padding-top: 200px; }
+.gd .slot--contacts { display: block; background: rgba(10, 6, 18, .88); padding: 16px; box-shadow: 0 0 0 3px #3c2a66; }
+.gd .lead { font-size: 22px; margin-bottom: 6px; }
+.gd .about p:last-child { font-size: 16px; }
+.gd .links--contacts { justify-content: flex-start; margin-top: 12px; }
+.gd .links--contacts .btn { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+.gd { scroll-behavior: auto; }
+.gd *, .gd *::before, .gd *::after { animation: none !important; transition: none !important; }
+}
+</style>
+<div class="gd">
+<!-- real nav: phones only (on wide screens the nav is part of the hero art) -->
+<header class="mnav">
+  <nav aria-label="Основная навигация">
+    <a href="#video">Видео</a>
+    <a href="#music">Музыка</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+</header>
+
+<main>
+  <!-- 1. HERO -->
+  <div class="hero-clip">
+  <section class="hero" id="top">
+    <h1 class="sr-only">гденебо — искренний братский поп-панк</h1>
+    <picture>
+      <img class="hero__img" src="https://gdenebo.onrender.com/img/hero-wide.webp" width="1920" height="1154"
+           alt="Двое участников группы гденебо в красном и синем спортивных костюмах сидят на кирпичной стене на фоне закатного города. Вывеска: гденебо — искренний братский поп-панк.">
+    </picture>
+    <!-- pixel-art animation layers: frame sprites, 10 fps, whole logical pixels only -->
+    <i class="px px--text px--text-d" aria-hidden="true"></i>
+    <i class="px px--stars-a" aria-hidden="true"></i>
+    <i class="px px--stars-b" aria-hidden="true"></i>
+    <i class="px px--stars-c" aria-hidden="true"></i>
+    <i class="px px--fx-l" aria-hidden="true"></i>
+    <i class="px px--fx-r" aria-hidden="true"></i>
+    <i class="px px--lamp-l" aria-hidden="true"></i>
+    <i class="px px--lamp-r" aria-hidden="true"></i>
+    <i class="px px--cat" aria-hidden="true"></i>
+    <!-- clickable areas over the nav drawn in the art -->
+    <nav class="hot" aria-label="Основная навигация">
+      <a style="left:25.1%;width:16.6%" href="#video" aria-label="Видео"></a>
+      <a style="left:41.7%;width:16.6%" href="#music" aria-label="Музыка"></a>
+      <a style="left:58.3%;width:16.6%" href="#contacts" aria-label="Контакты"></a>
+    </nav>
+  </section>
+  </div>
+
+  <!-- 2. VIDEO -->
+  <section class="scene scene--video" id="video" aria-label="Видео">
+    <div class="stage">
+      <div class="slot slot--video">
+        <div class="screen">
+          <!-- VK video player (vkvideo.ru domain: the vk.com embed rendered a black screen) -->
+          <iframe id="clip" data-src="https://vkvideo.ru/video_ext.php?oid=-128118068&id=456239232&hd=2&js_api=1&loop=1"
+                  title="Клип гденебо" loading="lazy" allowfullscreen
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+      </div>
+      <!-- TV bezel with a transparent screen, drawn above the video -->
+      <i class="px px--tvbtn" aria-hidden="true"></i>
+      <i class="px px--knob-a" aria-hidden="true"></i>
+      <i class="px px--knob-b" aria-hidden="true"></i>
+      <img class="tvframe" src="https://gdenebo.onrender.com/img/tv-frame.webp" width="1120" height="640" alt="" aria-hidden="true">
+    </div>
+  </section>
+
+  <!-- 3. MUSIC -->
+  <section class="scene scene--music" id="music" aria-label="Музыка">
+    <div class="stage"><i class="px px--vinyl" aria-hidden="true"></i></div>
+    <div class="slot slot--music">
+      <div class="player" id="player">
+        <iframe id="ymusic" style="border-radius:12px" frameborder="0" width="100%" height="470"
+                title="Spotify: гденебо" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+                src="https://open.spotify.com/embed/artist/1uYlEnMz2OyrIvt9TrfFQ6?utm_source=generator&theme=0&si=71c9513e6f7749d8"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ABOUT + CONTACTS -->
+  <section class="scene scene--contacts" id="contacts" aria-label="О группе и контакты">
+    <div class="slot slot--contacts">
+      <div class="about" id="about">
+        <p class="lead">гденебо — искренний братский поп-панк.</p>
+        <p>Двое друзей, гитары и песни про то, что болит и что греет. Здесь будет история группы.</p>
+      </div>
+      <div class="links links--contacts">
+        <a class="btn" href="mailto:hello@gdenebo.ru">hello@gdenebo.ru</a>
+        <a class="btn" href="#">Telegram</a>
+        <a class="btn" href="#">VK</a>
+        <a class="btn" href="#">YouTube</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© 2026 гденебо</span>
+  <a href="#top">наверх ▲</a>
+</footer>
+
+<!-- loop the clip: VK player API restarts it on "ended" (listener must exist before the player loads, so src is set here;
+     if the API script is blocked the player still loads, just without the loop) -->
+</div>
+<script src="https://vk.com/js/api/videoplayer.js"></script><script>
+  (function () {
+    var f = document.getElementById('clip');
+    if (!f) return;
+    f.src = f.getAttribute('data-src');          /* the API validates src, and listens before the frame finishes loading */
+    try {
+      var player = VK.VideoPlayer(f);
+      player.on('ended', function () { player.seek(0); player.play(); });
+    } catch (e) { /* API script blocked: player still works, just no loop */ }
+  })();
+</script><script>
+  /* phones: the nav is drawn in the hero art; show the real fixed bar only after the hero scrolls away */
+  (function () {
+    var bar = document.querySelector('.mnav'), hero = document.querySelector('.hero-clip');
+    function upd() { bar.classList.toggle('on', hero.getBoundingClientRect().bottom < 60); }
+    addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+  })();
+</script><script>
+  /* Spotify's header (artist, subscribe, controls) is cut off by the panel edge so only the track list shows.
+     The iframe is cross-origin, so it is shifted up by HDR px inside the clipped panel.
+     desktop: scaled to the panel in the art; phones: natural size, CSS does the shift */
+  (function () {
+    var HDR = 200, FULL = 470;
+    var box = document.getElementById('player'), f = document.getElementById('ymusic');
+    var mq = matchMedia('(max-width: 899px)');
+    function fit() {
+      if (mq.matches) { f.style.width = f.style.height = f.style.transform = ''; return; }
+      var s = box.clientHeight / (FULL - HDR);
+      f.style.height = FULL + 'px';
+      f.style.width = (box.clientWidth / s) + 'px';
+      f.style.transform = 'scale(' + s + ') translateY(-' + HDR + 'px)';
+    }
+    new ResizeObserver(fit).observe(box); fit();
+  })();
+</script>
+<script>document.documentElement.style.scrollBehavior='smooth';</script>
